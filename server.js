@@ -1,3 +1,4 @@
+
 process.noDeprecation = true;
 
 const express = require("express");
@@ -6,7 +7,7 @@ const fs = require("fs");
 
 const app = express();
 const CONFIG_FILE = "config.json";
-const PORT = process.env.PORT || 3000; // Gunakan port dari Replit
+const PORT = 3000;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
@@ -88,26 +89,26 @@ const initializeServer = async () => {
         apiKey = await promptForApiKey();
     }
 
-    app.listen(PORT, '0.0.0.0')
-        .on('error', (e) => {
-            if (e.code === 'EADDRINUSE') {
-                console.log(`Port ${PORT} is busy, trying port 3001...`);
-                app.listen(3001, '0.0.0.0', () => {
-                    console.log("=======================================");
-                    console.log("            GEMINI AI TOOLS            ");
-                    console.log("=======================================");
-                    console.log("Server is running at: http://0.0.0.0:3001");
-                    console.log("Use this tool to generate AI content.\n");
-                });
-            }
-        })
-        .on('listening', () => {
-            console.log("=======================================");
-            console.log("            GEMINI AI TOOLS            ");
-            console.log("=======================================");
-            console.log(`Server is running at: http://0.0.0.0:${PORT}`);
-            console.log("Use this tool to generate AI content.\n");
-        });
+    const server = app.listen(PORT, '0.0.0.0', () => {
+        console.log("=======================================");
+        console.log("            GEMINI AI TOOLS            ");
+        console.log("=======================================");
+        console.log(`Server is running at: http://0.0.0.0:${PORT}`);
+        console.log("Use this tool to generate AI content.\n");
+    });
+
+    server.on('error', (e) => {
+        if (e.code === 'EADDRINUSE') {
+            console.log(`Port ${PORT} is busy, using backup port...`);
+            app.listen(3001, '0.0.0.0', () => {
+                console.log("=======================================");
+                console.log("            GEMINI AI TOOLS            ");
+                console.log("=======================================");
+                console.log("Server is running at: http://0.0.0.0:3001");
+                console.log("Use this tool to generate AI content.\n");
+            });
+        }
+    });
 };
 
 initializeServer();
