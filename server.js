@@ -88,13 +88,26 @@ const initializeServer = async () => {
         apiKey = await promptForApiKey();
     }
 
-    app.listen(PORT, () => {
-        console.log("=======================================");
-        console.log("            GEMINI AI TOOLS            ");
-        console.log("=======================================");
-        console.log(`Server is running at: http://localhost:${PORT}`);
-        console.log("Use this tool to generate AI content.\n");
-    });
+    app.listen(PORT, '0.0.0.0')
+        .on('error', (e) => {
+            if (e.code === 'EADDRINUSE') {
+                console.log(`Port ${PORT} is busy, trying port 3001...`);
+                app.listen(3001, '0.0.0.0', () => {
+                    console.log("=======================================");
+                    console.log("            GEMINI AI TOOLS            ");
+                    console.log("=======================================");
+                    console.log("Server is running at: http://0.0.0.0:3001");
+                    console.log("Use this tool to generate AI content.\n");
+                });
+            }
+        })
+        .on('listening', () => {
+            console.log("=======================================");
+            console.log("            GEMINI AI TOOLS            ");
+            console.log("=======================================");
+            console.log(`Server is running at: http://0.0.0.0:${PORT}`);
+            console.log("Use this tool to generate AI content.\n");
+        });
 };
 
 initializeServer();
