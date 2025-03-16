@@ -461,7 +461,7 @@ async function generateContent() {
     promptInput.value = '';
 
     try {
-        const response = await fetch("http://localhost:3333/api/generate", {
+        const response = await fetch("/api/generate", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
