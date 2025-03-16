@@ -10,7 +10,7 @@ const CONFIG_FILE = "config.json";
 const PORT = 3000;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 
 const loadApiKey = () => {
     try {
