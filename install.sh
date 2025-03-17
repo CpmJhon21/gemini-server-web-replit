@@ -4,20 +4,20 @@
 clear
 
 echo "====================================="
-echo "  Memulai Instalasi di Replit..."
+echo "   Instalasi & Menjalankan Server"
 echo "====================================="
 
-# Instal Node.js (Replit sudah menyediakannya, hanya pastikan terpasang)
-echo "Memeriksa Node.js..."
-if ! command -v node &> /dev/null; then
-    echo "Node.js tidak ditemukan! Menginstal Node.js..."
-    curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-    apt install -y nodejs npm
-else
-    echo "✓ Node.js sudah terinstal."
+# Periksa apakah file server.js ada
+if [ ! -f "server.js" ]; then
+    echo "❌ File server.js tidak ditemukan!"
+    exit 1
 fi
 
-# Inisialisasi proyek jika belum ada
+# Instal Node.js dan npm (Replit biasanya sudah memiliki Node.js)
+echo "✓ Memastikan Node.js dan npm tersedia..."
+command -v node >/dev/null 2>&1 || { curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && apt install -y nodejs npm; }
+
+# Inisialisasi proyek jika belum ada package.json
 if [ ! -f "package.json" ]; then
     echo "Inisialisasi proyek Node.js..."
     npm init -y
