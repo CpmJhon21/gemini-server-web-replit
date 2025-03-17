@@ -4,31 +4,28 @@
 clear
 
 echo "====================================="
-echo "  Menginstal & Menjalankan Server Node.js"
+echo "  Memulai Instalasi di Replit..."
 echo "====================================="
 
-# Periksa dan instal Node.js jika belum ada
+# Instal Node.js (Replit sudah menyediakannya, hanya pastikan terpasang)
+echo "Memeriksa Node.js..."
 if ! command -v node &> /dev/null; then
     echo "Node.js tidak ditemukan! Menginstal Node.js..."
-    pkg install -y nodejs || sudo apt install -y nodejs npm
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+    apt install -y nodejs npm
 else
     echo "✓ Node.js sudah terinstal."
 fi
 
-# Inisialisasi proyek Node.js
-echo "Inisialisasi proyek..."
-npm init -y
+# Inisialisasi proyek jika belum ada
+if [ ! -f "package.json" ]; then
+    echo "Inisialisasi proyek Node.js..."
+    npm init -y
+fi
 
 # Instal dependensi
 echo "Menginstal dependensi..."
-npm install express
-npm install node-fetch@2
-
-# Pastikan `server.js` ada sebelum menjalankan server
-if [ ! -f "server.js" ]; then
-    echo "❌ File server.js tidak ditemukan!"
-    exit 1
-fi
+npm install express node-fetch@2
 
 # Jalankan server
 echo "Menjalankan server..."
