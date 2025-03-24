@@ -52,17 +52,22 @@ https://github.com/CpmJhon21/gemini-server-web-replit.git
     ```
     
     **If Node.js is not installed, run:**
-   ``` curl -fsSL https://deb.nodesource.com/setup_18.x | bash - apt-get install -y nodejs ```
+   ```bash
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - apt-get install -y nodejs
+    ```
     
     **Inisialisasi Proyek NPM**
     
-    ``` npm init -y ```
+    ```bash
+    npm init -y
+    ```
     
     **Install Required Dependencies**
     
-    ``` npm install express
-   npm install node-fetch@2 
-   ```
+    ```bash
+     npm install express
+     npm install node-fetch@2 
+    ```
 
 3. **Install dependencies Automatic**:
 
@@ -99,4 +104,3 @@ Once the server is running, you can interact with AI Assistant via the **chatbot
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
