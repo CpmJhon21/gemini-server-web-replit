@@ -25,6 +25,7 @@ AI Assistant is a simple tool that allows you to interact with **AI Assistant** 
 
 visit the replit website When you have logged in, create your Replit account when you have created it, press the button like the three dots in the top left corner car whose name is Create App After finishing, press exit to select the free option whether you want to use a template or via GitHub.  commands:
 
+With template replit:
 ```opsi template replit 
 Node.js
 ```
