@@ -52,8 +52,7 @@ https://github.com/CpmJhon21/gemini-server-web-replit.git
     ```
     
     **If Node.js is not installed, run:**
-   ```curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-apt-get install -y nodejs```
+   ```curl -fsSL https://deb.nodesource.com/setup_18.x | bash - apt-get install -y nodejs```
     
     **Inisialisasi Proyek NPM**
     
