@@ -1,4 +1,4 @@
-
+ 
 # AI Assistant
 
 ![Banner](Assisten-ai.jpg)
@@ -21,48 +21,54 @@ AI Assistant is a simple tool that allows you to interact with **AI Assistant** 
 
 ## How to Install and Use AI Assistant
 
-### Prerequisites
+### https://replit.com
 
-Make sure you have **Node.js** and **npm** installed on your system. You can check if you have them installed by running the following commands:
+visit the replit website When you have logged in, create your Replit account when you have created it, press the button like the three dots in the top left corner car whose name is Create App After finishing, press exit to select the free option whether you want to use a template or via GitHub.  commands:
 
-```bash
-node -v
-npm -v
+```opsi template replit 
+Node.jjs
 ```
 
-If you don’t have Node.js installed, you can download it from [here](https://nodejs.org/).
+With Github:
 
-or you can download it directly in the terminal with the following command:
-
-With Termux:
-
-```bash
-pkg install nodejs
-```
-With Linux:
-
-```bash
-sudo apt install nodejs npm
+```opsi github 
+choose Froms URL
+https://github.com/CpmJhon21/gemini-server-web-replit.git
 ```
 
 ### Installation
 
 1. **Clone the repository** to your local machine:
 
-    ```bash
-    git clone https://github.com/CpmJhon21/gemini-server-web-replit.git
-    cd Tes
-    ls
-    cd Tes
+    ```After entering this project in Replit, look for the shell look in the bottom right corner finished searching shell
+    
     ```
 
 2. **Install dependencies**:
 
-    ```bash
-    npm install
-    npm init -y
+
+    **Install Node.js and NPM (if not already there)**
+    ```
+    node -v
+    npm -v
+    ```
+    **If Node.js is not installed, run:**
+   ```
+   curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+apt-get install -y nodejs
+
+    ```
+    
+    **Inisialisasi Proyek NPM**
+    
+    ```npm init -y```
+    
+    **Install Required Dependencies**
+    
+    ```
     npm install express
-    npm install node-fetch@2
+   npm install node-fetch@2
+
     ```
 
 3. **Install dependencies Automatic**:
@@ -77,7 +83,8 @@ sudo apt install nodejs npm
     node server.js
     ```
 
-4. **Access the chatbot** by navigating to `http://localhost:3000` in your browser.
+4. **If successful, the following output will appear:** Server is running at:  `http://0.0.0.0:3000
+` in your browser.
 
 ### API Key Configuration
 
