@@ -26,7 +26,7 @@ AI Assistant is a simple tool that allows you to interact with **AI Assistant** 
 visit the replit website When you have logged in, create your Replit account when you have created it, press the button like the three dots in the top left corner car whose name is Create App After finishing, press exit to select the free option whether you want to use a template or via GitHub.  commands:
 
 ```opsi template replit 
-Node.js
+Node.jjs
 ```
 
 With Github:
@@ -80,9 +80,44 @@ https://github.com/CpmJhon21/gemini-server-web-replit.git
     ```bash
     node server.js
     ```
+    
+5. **Enter API Key (If Requested)**:
+    
+    **If you don't have an API Key, enter the API Key from)**
 
-4. **If successful, the following output will appear:** Server is running at:  `http://0.0.0.0:3000
-` in your browser.
+    ```bash
+    https://aistudio.google.com/app/apikey
+    ```
+
+6. **If successful, the following output will appear:** 
+
+ ```bash
+   Server is running at:  `http://0.0.0.0:3000` in your browser.
+   ```
+   
+7. **Website Access**:
+
+
+   **Open your browser and access:**
+    ```php-template
+    https://<username>-<project>.repl.co
+    ```
+    
+    **If Replit does not display the automatic link, try accessing:**
+    
+     ```ccp
+    http://0.0.0.0:3000
+    ```
+    
+    **or you can use this**
+    
+     ```arduino
+    http://localhost:3000
+    ```
+    
+    
+    **After following the steps above, the server should be running fine on Replit.**
+    
 
 ### API Key Configuration
 
